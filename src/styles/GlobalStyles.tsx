@@ -5,7 +5,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--dark-grey);
   }
   html, body, #root {
     max-width: 100vw;
