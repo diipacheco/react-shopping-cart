@@ -1,4 +1,11 @@
-import { createContext, useContext } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
+import api from '../services/api';
 
 interface IProduct {
   id: number;
@@ -14,14 +21,43 @@ interface IProduct {
 }
 
 interface IProductsContextData {
+  // entities
   categories: string[];
   products: IProduct[];
+
+  // functions
+  fetchCategories(): Promise<void>;
 }
 
 const ProductsContext = createContext({} as IProductsContextData);
 
-export function ProductsContextProvider() {
-  return null;
+export function ProductsContextProvider(children: React.ReactElement) {
+  const [categories, setCategories] = useState([] as string[]);
+  const [products, setProducts] = useState([] as IProduct[]);
+
+  const fetchCategories = useCallback(async () => {
+    try {
+      const response = await api.get('/categories');
+      setCategories(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({
+      categories,
+      products,
+      fetchCategories,
+    }),
+    [categories, fetchCategories, products],
+  );
+
+  return (
+    <ProductsContext.Provider value={contextValue}>
+      {children}
+    </ProductsContext.Provider>
+  );
 }
 
 export function useProducts() {
