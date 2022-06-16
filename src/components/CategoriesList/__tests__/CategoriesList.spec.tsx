@@ -28,7 +28,11 @@ describe('<CategoriesList />', () => {
   });
 
   it('should be able to list categories', async () => {
-    const { queryByTestId, findAllByTestId } = render(<CategoriesList />);
+    const { queryByTestId, findAllByTestId } = render(
+      <BrowserRouter>
+        <CategoriesList />
+      </BrowserRouter>,
+    );
 
     const categoriesList = queryByTestId('categories-list') as HTMLUListElement;
 
@@ -37,6 +41,8 @@ describe('<CategoriesList />', () => {
     )) as HTMLLIElement[];
 
     expect(categoriesList.children).toHaveLength(4);
-    expect(contentCategoriesList[0].innerHTML).toBe('electronics');
+    expect(contentCategoriesList[0].firstElementChild?.innerHTML).toBe(
+      'electronics',
+    );
   });
 });
