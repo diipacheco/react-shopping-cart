@@ -62,7 +62,7 @@ describe('ProductsContext', () => {
       },
     ];
 
-    apiMock.onGet('/products').reply(200, apiResponse);
+    apiMock.onGet('/products?limit=20').reply(200, apiResponse);
 
     const { result, waitForNextUpdate } = renderHook(() => useProducts(), {
       wrapper: ProductsContextProvider,

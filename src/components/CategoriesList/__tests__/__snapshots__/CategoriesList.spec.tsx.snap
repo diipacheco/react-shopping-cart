@@ -7,9 +7,10 @@ Object {
     <div>
       <ul
         class="sc-bczRLJ iqorin"
-        data-testid="categories-list"
       >
-        <nav>
+        <nav
+          data-testid="categories-list"
+        >
           <li
             data-testid="content-categories-list"
           >
@@ -53,9 +54,10 @@ Object {
   "container": <div>
     <ul
       class="sc-bczRLJ iqorin"
-      data-testid="categories-list"
     >
-      <nav>
+      <nav
+        data-testid="categories-list"
+      >
         <li
           data-testid="content-categories-list"
         >

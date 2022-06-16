@@ -12,8 +12,8 @@ export default function CategoriesList() {
     fetchCategories();
   }, [fetchCategories]);
   return (
-    <Container data-testid="categories-list">
-      <nav>
+    <Container>
+      <nav data-testid="categories-list">
         {categories?.map(category => (
           <li data-testid="content-categories-list" key={category}>
             <Link to={`/${category}`}>{category}</Link>
