@@ -1,30 +1,31 @@
 import styled from 'styled-components';
 
 export const Container = styled.ul`
-  display: flex;
-  justify-content: center;
+  > nav {
+    display: flex;
+    justify-content: center;
 
-  padding: 20px 0;
+    padding: 20px 0;
+    > li + li {
+      margin-left: 20px;
+    }
 
-  > li + li {
-    margin-left: 20px;
-  }
+    > li {
+      list-style: none;
+      transition: color 0.3s linear;
 
-  > li {
-    list-style: none;
-    transition: color 0.3s linear;
+      > a {
+        color: var(--dark-orange);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.1s ease;
 
-    > a {
-      color: var(--dark-orange);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: 0.1s ease;
-
-      &:hover {
-        color: var(--orange);
-        border-bottom: 4px solid var(--brown);
+        &:hover {
+          color: var(--orange);
+          border-bottom: 4px solid var(--brown);
+        }
       }
     }
   }

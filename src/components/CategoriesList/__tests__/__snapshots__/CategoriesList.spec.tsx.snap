@@ -6,9 +6,56 @@ Object {
   "baseElement": <body>
     <div>
       <ul
-        class="sc-bczRLJ iloDZk"
+        class="sc-bczRLJ iqorin"
         data-testid="categories-list"
       >
+        <nav>
+          <li
+            data-testid="content-categories-list"
+          >
+            <a
+              href="/electronics"
+            >
+              electronics
+            </a>
+          </li>
+          <li
+            data-testid="content-categories-list"
+          >
+            <a
+              href="/jewelery"
+            >
+              jewelery
+            </a>
+          </li>
+          <li
+            data-testid="content-categories-list"
+          >
+            <a
+              href="/men's clothing"
+            >
+              men's clothing
+            </a>
+          </li>
+          <li
+            data-testid="content-categories-list"
+          >
+            <a
+              href="/women's clothing"
+            >
+              women's clothing
+            </a>
+          </li>
+        </nav>
+      </ul>
+    </div>
+  </body>,
+  "container": <div>
+    <ul
+      class="sc-bczRLJ iqorin"
+      data-testid="categories-list"
+    >
+      <nav>
         <li
           data-testid="content-categories-list"
         >
@@ -45,50 +92,7 @@ Object {
             women's clothing
           </a>
         </li>
-      </ul>
-    </div>
-  </body>,
-  "container": <div>
-    <ul
-      class="sc-bczRLJ iloDZk"
-      data-testid="categories-list"
-    >
-      <li
-        data-testid="content-categories-list"
-      >
-        <a
-          href="/electronics"
-        >
-          electronics
-        </a>
-      </li>
-      <li
-        data-testid="content-categories-list"
-      >
-        <a
-          href="/jewelery"
-        >
-          jewelery
-        </a>
-      </li>
-      <li
-        data-testid="content-categories-list"
-      >
-        <a
-          href="/men's clothing"
-        >
-          men's clothing
-        </a>
-      </li>
-      <li
-        data-testid="content-categories-list"
-      >
-        <a
-          href="/women's clothing"
-        >
-          women's clothing
-        </a>
-      </li>
+      </nav>
     </ul>
   </div>,
   "debug": [Function],

@@ -24,6 +24,7 @@ interface IProductsContextData {
   // entities
   categories: string[];
   products: IProduct[];
+  loading: boolean;
 
   // functions
   fetchCategories(): Promise<void>;
@@ -41,6 +42,7 @@ export function ProductsContextProvider({
 }: IProductsContextProviderProps) {
   const [categories, setCategories] = useState([] as string[]);
   const [products, setProducts] = useState([] as IProduct[]);
+  const [loading, setLoading] = useState(false);
 
   const fetchCategories = useCallback(async () => {
     const response = await api.get('/products/categories');
@@ -48,8 +50,14 @@ export function ProductsContextProvider({
   }, []);
 
   const fetchProducts = useCallback(async () => {
-    const response = await api.get('/products');
-    setProducts(response.data);
+    setLoading(true);
+    try {
+      const response = await api.get('/products?limit=20');
+      setProducts(response.data);
+      setLoading(false);
+    } catch (error) {
+      throw new Error('erro ao carregar produtos');
+    }
   }, []);
 
   const contextValue = useMemo(
@@ -58,8 +66,9 @@ export function ProductsContextProvider({
       products,
       fetchCategories,
       fetchProducts,
+      loading,
     }),
-    [categories, fetchCategories, products, fetchProducts],
+    [categories, fetchCategories, products, fetchProducts, loading],
   );
 
   return (
