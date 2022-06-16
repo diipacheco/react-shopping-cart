@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 export default function CategoriesList() {
   return (
-    <Container>
+    <Container data-testid="categories-list">
       <li>MEN&apos;S CLOUTING</li>
     </Container>
   );
