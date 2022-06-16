@@ -3,7 +3,20 @@ import { BrowserRouter } from 'react-router-dom';
 
 import CategoriesList from '..';
 
-describe('<Header />', () => {
+jest.mock('../../../context/Products', () => ({
+  useProducts: () => ({
+    categories: [
+      'electronics',
+      'jewelery',
+      "men's clothing",
+      "women's clothing",
+    ],
+    products: [],
+    fetchCategories: jest.fn(),
+  }),
+}));
+
+describe('<CategoriesList />', () => {
   it('should match snapshots', () => {
     const wrapper = render(
       <BrowserRouter>
@@ -14,15 +27,16 @@ describe('<Header />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should be able to list categories', () => {
+  it('should be able to list categories', async () => {
     const { queryByTestId, findAllByTestId } = render(<CategoriesList />);
 
     const categoriesList = queryByTestId('categories-list') as HTMLUListElement;
 
-    // const contentCategoriesList = (await findAllByTestId(
-    //   'content-categories-list',
-    // )) as HTMLLIElement[];
+    const contentCategoriesList = (await findAllByTestId(
+      'content-categories-list',
+    )) as HTMLLIElement[];
 
     expect(categoriesList.children).toHaveLength(4);
+    expect(contentCategoriesList[0].innerHTML).toBe('ELECTRONICS');
   });
 });

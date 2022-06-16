@@ -13,7 +13,9 @@ export default function CategoriesList() {
   return (
     <Container data-testid="categories-list">
       {categories?.map(category => (
-        <li key={category}>{category.toUpperCase()}</li>
+        <li data-testid="content-categories-list" key={category}>
+          {category.toUpperCase()}
+        </li>
       ))}
     </Container>
   );

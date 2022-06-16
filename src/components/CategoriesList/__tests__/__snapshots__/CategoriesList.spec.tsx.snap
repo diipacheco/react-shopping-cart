@@ -1,27 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> should match snapshots 1`] = `
+exports[`<CategoriesList /> should match snapshots 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <ul
-        class="sc-bczRLJ eUJLyQ"
+        class="sc-bczRLJ itkdMI"
         data-testid="categories-list"
       >
-        <li>
-          MEN'S CLOUTING
+        <li
+          data-testid="content-categories-list"
+        >
+          ELECTRONICS
+        </li>
+        <li
+          data-testid="content-categories-list"
+        >
+          JEWELERY
+        </li>
+        <li
+          data-testid="content-categories-list"
+        >
+          MEN'S CLOTHING
+        </li>
+        <li
+          data-testid="content-categories-list"
+        >
+          WOMEN'S CLOTHING
         </li>
       </ul>
     </div>
   </body>,
   "container": <div>
     <ul
-      class="sc-bczRLJ eUJLyQ"
+      class="sc-bczRLJ itkdMI"
       data-testid="categories-list"
     >
-      <li>
-        MEN'S CLOUTING
+      <li
+        data-testid="content-categories-list"
+      >
+        ELECTRONICS
+      </li>
+      <li
+        data-testid="content-categories-list"
+      >
+        JEWELERY
+      </li>
+      <li
+        data-testid="content-categories-list"
+      >
+        MEN'S CLOTHING
+      </li>
+      <li
+        data-testid="content-categories-list"
+      >
+        WOMEN'S CLOTHING
       </li>
     </ul>
   </div>,
