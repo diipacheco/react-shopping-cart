@@ -39,6 +39,7 @@ export const Content = styled.section`
 export const CartContainer = styled.div`
   display: flex;
   height: 40px;
+  position: relative;
 
   > button {
     height: 100%;
@@ -48,4 +49,20 @@ export const CartContainer = styled.div`
 
   @media only screen and (max-width: 425px) {
   }
+`;
+
+export const ProductsAddedTooltip = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  right: 0;
+  top: -7px;
+  background-color: var(--white);
+  color: var(--orange);
+  font-size: 12px;
+
+  position: absolute;
+  border-radius: 50%;
 `;
