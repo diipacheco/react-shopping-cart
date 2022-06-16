@@ -27,6 +27,7 @@ interface IProductsContextData {
 
   // functions
   fetchCategories(): Promise<void>;
+  fetchProducts(): Promise<void>;
 }
 
 const ProductsContext = createContext({} as IProductsContextData);
@@ -42,13 +43,13 @@ export function ProductsContextProvider({
   const [products, setProducts] = useState([] as IProduct[]);
 
   const fetchCategories = useCallback(async () => {
-    try {
-      const response = await api.get('/products/categories');
-      console.log(response.data);
-      setCategories(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await api.get('/products/categories');
+    setCategories(response.data);
+  }, []);
+
+  const fetchProducts = useCallback(async () => {
+    const response = await api.get('/products');
+    setProducts(response.data);
   }, []);
 
   const contextValue = useMemo(
@@ -56,8 +57,9 @@ export function ProductsContextProvider({
       categories,
       products,
       fetchCategories,
+      fetchProducts,
     }),
-    [categories, fetchCategories, products],
+    [categories, fetchCategories, products, fetchProducts],
   );
 
   return (
@@ -69,8 +71,5 @@ export function ProductsContextProvider({
 
 export function useProducts() {
   const context = useContext(ProductsContext);
-  if (!context) {
-    throw new Error('Use Products must be wrapped on ProductsProvider');
-  }
   return context;
 }
