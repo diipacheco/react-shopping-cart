@@ -2,9 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100%;
-  height: 60px;
   padding: 20px 0;
 
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Content = styled.section`
   display: flex;
   justify-content: space-around;
 
@@ -15,7 +19,7 @@ export const Container = styled.header`
   }
 `;
 
-export const CartContainer = styled.section`
+export const CartContainer = styled.div`
   display: flex;
   height: 40px;
 
