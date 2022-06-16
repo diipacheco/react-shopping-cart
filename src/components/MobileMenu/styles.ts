@@ -25,10 +25,10 @@ export const Container = styled.nav<IContainerProps>`
   }
 
   a {
-    font-size: 2rem;
+    font-size: 14px;
     text-transform: uppercase;
     padding: 15px 0;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--white);
 
     text-decoration: none;

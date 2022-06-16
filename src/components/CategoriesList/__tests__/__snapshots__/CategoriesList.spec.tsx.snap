@@ -6,56 +6,88 @@ Object {
   "baseElement": <body>
     <div>
       <ul
-        class="sc-bczRLJ dfSlmu"
+        class="sc-bczRLJ iloDZk"
         data-testid="categories-list"
       >
         <li
           data-testid="content-categories-list"
         >
-          electronics
+          <a
+            href="/electronics"
+          >
+            electronics
+          </a>
         </li>
         <li
           data-testid="content-categories-list"
         >
-          jewelery
+          <a
+            href="/jewelery"
+          >
+            jewelery
+          </a>
         </li>
         <li
           data-testid="content-categories-list"
         >
-          men's clothing
+          <a
+            href="/men's clothing"
+          >
+            men's clothing
+          </a>
         </li>
         <li
           data-testid="content-categories-list"
         >
-          women's clothing
+          <a
+            href="/women's clothing"
+          >
+            women's clothing
+          </a>
         </li>
       </ul>
     </div>
   </body>,
   "container": <div>
     <ul
-      class="sc-bczRLJ dfSlmu"
+      class="sc-bczRLJ iloDZk"
       data-testid="categories-list"
     >
       <li
         data-testid="content-categories-list"
       >
-        electronics
+        <a
+          href="/electronics"
+        >
+          electronics
+        </a>
       </li>
       <li
         data-testid="content-categories-list"
       >
-        jewelery
+        <a
+          href="/jewelery"
+        >
+          jewelery
+        </a>
       </li>
       <li
         data-testid="content-categories-list"
       >
-        men's clothing
+        <a
+          href="/men's clothing"
+        >
+          men's clothing
+        </a>
       </li>
       <li
         data-testid="content-categories-list"
       >
-        women's clothing
+        <a
+          href="/women's clothing"
+        >
+          women's clothing
+        </a>
       </li>
     </ul>
   </div>,
