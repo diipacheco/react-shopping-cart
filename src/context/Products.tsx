@@ -31,13 +31,20 @@ interface IProductsContextData {
 
 const ProductsContext = createContext({} as IProductsContextData);
 
-export function ProductsContextProvider(children: React.ReactElement) {
+interface IProductsContextProviderProps {
+  children: JSX.Element;
+}
+
+export function ProductsContextProvider({
+  children,
+}: IProductsContextProviderProps) {
   const [categories, setCategories] = useState([] as string[]);
   const [products, setProducts] = useState([] as IProduct[]);
 
   const fetchCategories = useCallback(async () => {
     try {
-      const response = await api.get('/categories');
+      const response = await api.get('/products/categories');
+      console.log(response.data);
       setCategories(response.data);
     } catch (error) {
       console.log(error);

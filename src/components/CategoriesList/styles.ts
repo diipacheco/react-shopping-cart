@@ -6,6 +6,10 @@ export const Container = styled.ul`
 
   padding: 20px 0;
 
+  > li + li {
+    margin-left: 20px;
+  }
+
   > li {
     list-style: none;
     color: var(--dark-orange);

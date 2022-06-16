@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useProducts } from '../../context/Products';
 
 import { Container } from './styles';
 
 export default function CategoriesList() {
+  const { categories, fetchCategories } = useProducts();
+
+  useEffect(() => {
+    fetchCategories();
+  }, [fetchCategories]);
   return (
     <Container data-testid="categories-list">
-      <li>MEN&apos;S CLOUTING</li>
+      {categories?.map(category => (
+        <li key={category}>{category.toUpperCase()}</li>
+      ))}
     </Container>
   );
 }
