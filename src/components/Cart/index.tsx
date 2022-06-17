@@ -19,7 +19,13 @@ import {
 } from './styles';
 
 export default function Cart() {
-  const { isCartOpened, addedProducts, addToCart, removeFromCart } = useCart();
+  const {
+    isCartOpened,
+    addedProducts,
+    addToCart,
+    removeFromCart,
+    removeQuantity,
+  } = useCart();
 
   const currencyFormatter = Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -60,6 +66,14 @@ export default function Cart() {
                       size={20}
                       color="var(--orange)"
                       onClick={() => addToCart(product.id)}
+                    />
+                  </button>
+                  <button type="button">
+                    <MdRemoveShoppingCart
+                      style={{ marginRight: '10px' }}
+                      size={20}
+                      color="var(--light-brown)"
+                      onClick={() => removeQuantity(product.id)}
                     />
                   </button>
                   <button

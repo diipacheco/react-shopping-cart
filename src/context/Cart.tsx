@@ -24,6 +24,7 @@ interface ICartContextData {
   addToCart(productId: number): void;
   setIsCartOpened: Dispatch<SetStateAction<boolean>>;
   removeFromCart(productId: number): void;
+  removeQuantity(productId: number): void;
 }
 
 export const CartContext = createContext({} as ICartContextData);
@@ -89,6 +90,24 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
     setTransformProducts(productsTransformed);
   }, [products]);
 
+  const removeQuantity = useCallback(
+    (productId: number) => {
+      const filteredProduct = addedProducts.find(
+        product => product.id === productId,
+      );
+
+      if (filteredProduct) {
+        if (filteredProduct.addedToCart >= 1) {
+          filteredProduct.addedToCart -= 1;
+          filteredProduct.subtotal -= filteredProduct.price;
+
+          setAddedProducts([...addedProducts]);
+        }
+      }
+    },
+    [addedProducts],
+  );
+
   const contextValue = useMemo(
     () => ({
       addedProducts,
@@ -97,8 +116,16 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
       isCartOpened,
       setIsCartOpened,
       removeFromCart,
+      removeQuantity,
     }),
-    [addedProducts, transformProducts, addToCart, isCartOpened, removeFromCart],
+    [
+      addedProducts,
+      transformProducts,
+      addToCart,
+      isCartOpened,
+      removeFromCart,
+      removeQuantity,
+    ],
   );
 
   return (
