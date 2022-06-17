@@ -7,7 +7,7 @@ import {
 } from 'react';
 import api from '../services/api';
 
-interface IProduct {
+export interface IProduct {
   id: number;
   title: string;
   price: number;
