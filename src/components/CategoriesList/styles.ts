@@ -13,19 +13,16 @@ export const Container = styled.ul`
     > li {
       list-style: none;
       transition: color 0.3s linear;
+      color: var(--dark-orange);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.1s ease;
 
-      > a {
-        color: var(--dark-orange);
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: 0.1s ease;
-
-        &:hover {
-          color: var(--orange);
-          border-bottom: 4px solid var(--brown);
-        }
+      &:hover {
+        color: var(--orange);
+        border-bottom: 4px solid var(--brown);
       }
     }
   }

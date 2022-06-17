@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <ul
-        class="sc-bczRLJ iqorin"
+        class="sc-bczRLJ HmtMg"
       >
         <nav
           data-testid="categories-list"
@@ -37,7 +37,7 @@ Object {
   </body>,
   "container": <div>
     <ul
-      class="sc-bczRLJ iqorin"
+      class="sc-bczRLJ HmtMg"
     >
       <nav
         data-testid="categories-list"

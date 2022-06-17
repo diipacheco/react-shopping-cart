@@ -30,6 +30,18 @@ export const Container = styled.div<IContainerProps>`
   overflow-y: scroll;
   background-color: var(--white);
   box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+
+  @media only screen and (max-width: 425px) {
+    width: 400px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    width: 350px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    width: 300px;
+  }
 `;
 
 export const Content = styled.div`

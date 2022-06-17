@@ -15,12 +15,15 @@ export const Container = styled.nav<IContainerProps>`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
 
   @media (min-width: 425px) {
     display: none;
   }
 
   @media (max-width: 425px) {
+    display: ${({ opened }) => (opened ? 'flex' : 'none')};
+
     width: 100%;
   }
 
