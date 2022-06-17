@@ -19,7 +19,7 @@ import {
 } from './styles';
 
 export default function Cart() {
-  const { isCartOpened, addedProducts, addToCart } = useCart();
+  const { isCartOpened, addedProducts, addToCart, removeFromCart } = useCart();
 
   const currencyFormatter = Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -40,8 +40,8 @@ export default function Cart() {
       {!addedProducts.length ? (
         <EmptyCart>
           <MdRemoveShoppingCart size={120} color="var(--light-brown)" />
-          <strong>Seu carrinho está vazio!</strong>
-          <p>Adicione algum quadrinho para prosseguir com a compra.</p>
+          <strong>Your cart is empty!</strong>
+          <p>Add some stuff to proceed with the buy.</p>
         </EmptyCart>
       ) : (
         <>
@@ -54,7 +54,7 @@ export default function Cart() {
               </TitleContainer>
               <PriceContainer>
                 <ButtonsContainer>
-                  <button type="button" className="exit">
+                  <button type="button">
                     <MdAddShoppingCart
                       style={{ marginRight: '10px' }}
                       size={20}
@@ -62,7 +62,10 @@ export default function Cart() {
                       onClick={() => addToCart(product.id)}
                     />
                   </button>
-                  <button type="button" className="exit">
+                  <button
+                    onClick={() => removeFromCart(product.id)}
+                    type="button"
+                  >
                     <MdClose size={20} color="var(--brown)" />
                   </button>
                 </ButtonsContainer>

@@ -23,6 +23,7 @@ interface ICartContextData {
   // functions
   addToCart(productId: number): void;
   setIsCartOpened: Dispatch<SetStateAction<boolean>>;
+  removeFromCart(productId: number): void;
 }
 
 export const CartContext = createContext({} as ICartContextData);
@@ -67,6 +68,17 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
     [addedProducts, transformProducts],
   );
 
+  const removeFromCart = useCallback(
+    (productId: number) => {
+      const newProducts = addedProducts.filter(
+        product => product.id !== productId,
+      );
+
+      setAddedProducts(newProducts);
+    },
+    [addedProducts],
+  );
+
   useEffect(() => {
     const productsTransformed = products.map(product => ({
       ...product,
@@ -84,8 +96,9 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
       addToCart,
       isCartOpened,
       setIsCartOpened,
+      removeFromCart,
     }),
-    [addedProducts, transformProducts, addToCart, isCartOpened],
+    [addedProducts, transformProducts, addToCart, isCartOpened, removeFromCart],
   );
 
   return (
