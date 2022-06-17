@@ -41,8 +41,6 @@ describe('<CategoriesList />', () => {
     )) as HTMLLIElement[];
 
     expect(categoriesList.children).toHaveLength(4);
-    expect(contentCategoriesList[0].firstElementChild?.innerHTML).toBe(
-      'electronics',
-    );
+    expect(contentCategoriesList[0].innerHTML).toBe('electronics');
   });
 });

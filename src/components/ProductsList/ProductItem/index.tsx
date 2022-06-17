@@ -25,7 +25,6 @@ export default function ProductItem() {
     fetchProducts();
   }, [fetchProducts]);
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {products?.map(product => (
         <Container key={product.id}>

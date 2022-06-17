@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useProducts } from '../../context/Products';
 
@@ -16,7 +15,7 @@ export default function CategoriesList() {
       <nav data-testid="categories-list">
         {categories?.map(category => (
           <li data-testid="content-categories-list" key={category}>
-            <Link to={`/${category}`}>{category}</Link>
+            {category}
           </li>
         ))}
       </nav>

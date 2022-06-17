@@ -14,38 +14,22 @@ Object {
           <li
             data-testid="content-categories-list"
           >
-            <a
-              href="/electronics"
-            >
-              electronics
-            </a>
+            electronics
           </li>
           <li
             data-testid="content-categories-list"
           >
-            <a
-              href="/jewelery"
-            >
-              jewelery
-            </a>
+            jewelery
           </li>
           <li
             data-testid="content-categories-list"
           >
-            <a
-              href="/men's clothing"
-            >
-              men's clothing
-            </a>
+            men's clothing
           </li>
           <li
             data-testid="content-categories-list"
           >
-            <a
-              href="/women's clothing"
-            >
-              women's clothing
-            </a>
+            women's clothing
           </li>
         </nav>
       </ul>
@@ -61,38 +45,22 @@ Object {
         <li
           data-testid="content-categories-list"
         >
-          <a
-            href="/electronics"
-          >
-            electronics
-          </a>
+          electronics
         </li>
         <li
           data-testid="content-categories-list"
         >
-          <a
-            href="/jewelery"
-          >
-            jewelery
-          </a>
+          jewelery
         </li>
         <li
           data-testid="content-categories-list"
         >
-          <a
-            href="/men's clothing"
-          >
-            men's clothing
-          </a>
+          men's clothing
         </li>
         <li
           data-testid="content-categories-list"
         >
-          <a
-            href="/women's clothing"
-          >
-            women's clothing
-          </a>
+          women's clothing
         </li>
       </nav>
     </ul>
