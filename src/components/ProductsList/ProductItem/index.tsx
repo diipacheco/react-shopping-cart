@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import { useCart } from '../../../context/Cart';
+
 import { useProducts } from '../../../context/Products';
 
 import {
@@ -12,6 +14,7 @@ import {
 
 export default function ProductItem() {
   const { fetchProducts, products } = useProducts();
+  const { addToCart } = useCart();
 
   const currencyFormatter = Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -35,7 +38,9 @@ export default function ProductItem() {
             <ProductCategory>{product.category}</ProductCategory>
           </ProductInfo>
           <ButtonContainer>
-            <button type="button">Add to Cart</button>
+            <button onClick={() => addToCart(product.id)} type="button">
+              Add to Cart
+            </button>
           </ButtonContainer>
         </Container>
       ))}

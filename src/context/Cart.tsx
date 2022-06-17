@@ -5,6 +5,8 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
+  Dispatch,
+  SetStateAction,
 } from 'react';
 import { IProduct, useProducts } from './Products';
 
@@ -20,6 +22,7 @@ interface ICartContextData {
 
   // functions
   addToCart(productId: number): void;
+  setIsCartOpened: Dispatch<SetStateAction<boolean>>;
 }
 
 export const CartContext = createContext({} as ICartContextData);
@@ -45,8 +48,8 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
         product => productId === product.id,
       );
 
-      if (itemToAdd) {
-        if (existedAddedItem) {
+      if (existedAddedItem) {
+        if (itemToAdd) {
           itemToAdd.addedToCart += 1;
           if (itemToAdd.addedToCart >= 1) {
             itemToAdd.subtotal += itemToAdd.price;
@@ -55,7 +58,7 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
           setAddedProducts([...addedProducts]);
           setIsCartOpened(true);
         }
-
+      } else if (itemToAdd) {
         itemToAdd.addedToCart = 1;
         setAddedProducts([...addedProducts, itemToAdd]);
         setIsCartOpened(true);
@@ -80,6 +83,7 @@ export function CartContextProvider({ children }: ICartContextProviderProps) {
       transformProducts,
       addToCart,
       isCartOpened,
+      setIsCartOpened,
     }),
     [addedProducts, transformProducts, addToCart, isCartOpened],
   );

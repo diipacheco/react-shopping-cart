@@ -27,7 +27,6 @@ export default createGlobalStyle`
     --orange: #F78131;
     --dark-orange: #C46627;
     --background: #E6CAA7;
-    --box-shadow: #00000029;
     --grey: ##767677;
   }
 `;

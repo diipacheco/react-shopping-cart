@@ -82,6 +82,7 @@ export const ButtonContainer = styled.div`
     padding: 0 20px;
     transition: 0.2s ease;
     text-transform: uppercase;
+
     &:hover {
       background-color: var(--dark-orange);
     }
